@@ -1,0 +1,41 @@
+.header {
+    border: 1rem solid var(--c-1);
+    border-radius: 2rem;
+    padding: 1rem;
+    background: white;
+    width: 100%;
+    max-width: var(--max-width);
+    @include child-margins(2rem);
+
+    h1, h2, h3 {
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 3rem;
+        color: var(--c-5);
+    }
+
+    h2 {
+        font-size: 4rem;
+        line-height: 1.25;
+        font-weight: normal;
+    }
+
+    h2 strong {
+        color: var(--c-2);
+    }
+
+    h2 a {
+        color: black;
+    }
+
+    h3 {
+        font-size: 2.4rem;
+        color: var(--c-4);
+    }
+
+    @include respond-from($screen-sm) {
+        padding: 2rem;
+    }
+}

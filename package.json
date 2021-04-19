@@ -1,0 +1,21 @@
+{
+  "private": true,
+  "dependencies": {
+    "valenski": "^1.4.0"
+  },
+  "scripts": {
+    "build": "npm run build:css",
+    "build:autoprefixer": "postcss app/css/*.css --use autoprefixer --no-map -r",
+    "build:css": "npm run build:sass && npm run build:autoprefixer",
+    "build:sass": "node-sass app/scss/style.scss app/css/style.css",
+    "postinstall": "npm run build",
+    "watch": "chokidar 'app/scss/*.scss' -c 'npm run build:css'"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.2.4",
+    "chokidar-cli": "^2.1.0",
+    "node-sass": "^5.0.0",
+    "postcss": "^8.2.6",
+    "postcss-cli": "^8.3.1"
+  }
+}

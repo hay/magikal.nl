@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mag ik al gevacinneerd worden?</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <div class="main">
+        <header class="header">
+            <h1>Mag ik al gevacinneerd worden? 🥳</h1>
+
+            <h2>
+                Als u bent geboren <strong>in of vóór 1952</strong> dan <strong>
+                    <a href="https://coronatest.nl/ik-wil-me-laten-vaccineren/een-online-afspraak-maken">kunt u nú online een afspraak maken</a>
+                </strong>.
+            </h2>
+
+            <h3>(ook als u geen brief heeft gehad)</h3>
+
+            <a class="button"
+               href="https://coronatest.nl/ik-wil-me-laten-vaccineren/een-online-afspraak-maken">
+                🎉 Maak hier een afspraak
+            </a>
+        </header>
+
+        <footer id="footer" class="footer">
+            Dit is géén site van de Rijksoverheid. <button id="show-about" class="text-link">Lees hier meer over deze site</button>.
+        </footer>
+
+        <article id="about" class="about hidden">
+            <h2>Waarom deze site?</h2>
+
+            <p>
+                <a href="https://www.haykranen.nl/?ref=magikal">Ik</a> ben een gewone Nederlander. Ik wil graag dat de coronacrisis zo snel mogelijk voorbij is. De enige manier om dat voor elkaar te krijgen is als zoveel mogelijk mensen zo snel mogelijk worden gevaccineerd tegen het coronavirus. Daarom is het belangrijk dat iedereen die gevaccineerd kán worden dat ook weet. In mijn omgeving waren meerdere mensen die wél gevaccineerd konden worden maar dat niet wisten. Daarom deze site.
+            </p>
+
+            <h2>Waar kan ik terecht met vragen over de vaccinatie of het coronavirus?</h2>
+
+            <p>
+                U kunt terecht bij <a href="https://www.rijksoverheid.nl/corona">de site van de Rijksoverheid</a>. Ik ben niet betrokken bij het vaccinatieprogramma en kan daar ook geen vragen over beantwoorden.
+            </p>
+
+            <h2>Wat gebeurt er met mijn bezoek aan deze site?</h2>
+
+            <p>
+                Ik hou statistieken bij van bezoekers aan deze website. Die statistieken zijn anoniem: ik registreer alleen de eerste twee delen van uw IP-adres.
+            </p>
+        </article>
+    </div>
+
+    <script>
+        (function() {
+            const $ = document.querySelector.bind(document);
+
+            $("#show-about").addEventListener('click', () => {
+                $("#about").classList.remove('hidden');
+                $("#footer").classList.add('hidden');
+            });
+        })();
+    </script>
+
+    <!-- Matomo -->
+    <script type="text/javascript">
+      var _paq = window._paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//projects.haykranen.nl/stats/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '11']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    <!-- End Matomo Code -->
+</body>
+</html>

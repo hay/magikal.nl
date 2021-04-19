@@ -1,0 +1,14 @@
+.footer {
+    color: white;
+    font-size: 1.4rem;
+    text-align: center;
+    padding: 2rem;
+
+    &, a, button {
+        color: white;
+    }
+
+    button {
+        text-decoration: underline;
+    }
+}

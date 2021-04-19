@@ -1,0 +1,19 @@
+.button {
+    border: 3px solid var(--c-1);
+    color: var(--c-1);
+    font-weight: bold;
+    text-transform: lowercase;
+    border-radius: 1rem;
+    font-size: 2rem;
+    @include margin-center;
+    display: block;
+    padding: 1rem;
+    text-align: center;
+    width: max-content;
+    max-width: 100%;
+
+    &:hover {
+        background: var(--c-1);
+        color: white;
+    }
+}
