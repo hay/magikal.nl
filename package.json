@@ -10,6 +10,7 @@
     "build:sass": "node-sass app/scss/style.scss app/css/style.css",
     "dist" : "rm -rf dist && mkdir dist && npm run build && cp -rv app/* dist/ && rm -rf dist/scss",
     "postinstall": "npm run build",
+    "serve" : "npm run watch & npx http-server",
     "watch": "chokidar 'app/scss/*.scss' -c 'npm run build:css'"
   },
   "devDependencies": {
