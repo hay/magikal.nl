@@ -26,6 +26,14 @@
                href="https://coronatest.nl/ik-wil-me-laten-vaccineren/een-online-afspraak-maken">
                 🎉 Maak hier een afspraak
             </a>
+
+            <output id="counter" class="counter hidden">
+                <span>Er zijn nu</span>
+                <strong id="counter-value"></strong>
+                <span>prikken gezet</span>
+
+                <span class="counter__source">(bron <a href="https://www.nrc.nl/nieuws/2021/01/24/zo-gaat-het-nu-met-het-vaccineren-a4028780">nrc.nl</a>)</span>
+            </output>
         </header>
 
         <footer id="footer" class="footer">
@@ -65,16 +73,7 @@
         </article>
     </div>
 
-    <script>
-        (function() {
-            const $ = document.querySelector.bind(document);
-
-            $("#show-about").addEventListener('click', () => {
-                $("#about").classList.remove('hidden');
-                $("#footer").classList.add('hidden');
-            });
-        })();
-    </script>
+    <script src="index.js"></script>
 
     <!-- Matomo -->
     <script type="text/javascript">
