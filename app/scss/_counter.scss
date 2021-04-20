@@ -1,0 +1,26 @@
+.counter {
+    &:before {
+        content: '';
+        display: block;
+        @include wh(90%, 1px);
+        background: var(--c-4);
+        @include margin-center;
+        margin-bottom: 2rem;
+    }
+
+    margin-top: 2rem;
+    @include flex-center;
+    color: var(--c-4);
+
+    p {
+        font-size: 1.6rem;
+    }
+
+    p strong {
+        font-family: var(--font-monospace);
+    }
+
+    p small {
+        font-size: 1.4rem;
+    }
+}

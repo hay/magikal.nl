@@ -9,12 +9,12 @@
 <body>
     <div class="main">
         <header class="header">
-            <h1>Mag ik al gevaccineerd worden? 🥳</h1>
+            <h1>Mag ik al gevaccineerd worden?</h1>
 
             <h2>
                 <span>
-                    Als u bent geboren <strong>in of vóór 1954</strong> dan <strong>
-                    <a href="https://coronatest.nl/ik-wil-me-laten-vaccineren/een-online-afspraak-maken">kunt u nú online een afspraak maken.</a></strong>
+                    Bent geboren <strong>in of vóór 1954</strong>? <br />
+                    <a href="https://coronatest.nl/ik-wil-me-laten-vaccineren/een-online-afspraak-maken">Dan kunt u nú een afspraak maken 🥳.</a></strong>
                 </span>
 
                 <span class="header__note">
@@ -27,13 +27,11 @@
                 🎉 Maak hier een afspraak
             </a>
 
-            <output id="counter" class="counter hidden">
-                <span>Er zijn nu</span>
-                <strong id="counter-value"></strong>
-                <span>prikken gezet</span>
+            <section id="counter" class="counter hidden">
+                <p>Er zijn nu <strong id="counter-value"></strong> prikken gezet.</p>
 
-                <span class="counter__source">(bron <a href="https://www.nrc.nl/nieuws/2021/01/24/zo-gaat-het-nu-met-het-vaccineren-a4028780">nrc.nl</a>)</span>
-            </output>
+                <p><small>(schatting, op basis van data <a href="https://www.nrc.nl/nieuws/2021/01/24/zo-gaat-het-nu-met-het-vaccineren-a4028780">nrc.nl</a>)</small></p>
+            </section>
         </header>
 
         <footer id="footer" class="footer">
@@ -62,7 +60,7 @@
             <h2>Ik heb een fout gezien op deze site</h2>
 
             <p>
-                U kunt me een <a href="mailto:hay@haykranen.nl">mailtje sturen</a>, <a href="https://twitter.com/hayify">een tweet</a> of als u kunt programmeren kunt u ook een bezoekje brengen <a href="https://github.com/hay/magikal.nl">aan GitHub</a>.
+                U kunt me een <a href="mailto:hay@haykranen.nl">mailtje sturen</a>, <a href="https://twitter.com/hayify">een tweet sturen</a> of als u kunt programmeren kunt u de code zien <a href="https://github.com/hay/magikal.nl">op GitHub</a>.
             </p>
 
             <h2>Wat gebeurt er met mijn bezoek aan deze site?</h2>
@@ -73,7 +71,8 @@
         </article>
     </div>
 
-    <script src="index.js"></script>
+    <script src="js/dayjs.min.js"></script>
+    <script src="js/index.js"></script>
 
     <!-- Matomo -->
     <script type="text/javascript">

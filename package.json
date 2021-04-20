@@ -1,6 +1,7 @@
 {
   "private": true,
   "dependencies": {
+    "dayjs": "^1.10.4",
     "valenski": "^1.4.0"
   },
   "scripts": {
@@ -8,9 +9,9 @@
     "build:autoprefixer": "postcss app/css/*.css --use autoprefixer --no-map -r",
     "build:css": "npm run build:sass && npm run build:autoprefixer",
     "build:sass": "node-sass app/scss/style.scss app/css/style.css",
-    "dist" : "rm -rf dist && mkdir dist && npm run build && cp -rv app/* dist/ && rm -rf dist/scss",
+    "dist": "rm -rf dist && mkdir dist && npm run build && cp -rv app/* dist/ && rm -rf dist/scss",
     "postinstall": "npm run build",
-    "serve" : "npm run watch & npx http-server",
+    "serve": "npm run watch & npx http-server",
     "watch": "chokidar 'app/scss/*.scss' -c 'npm run build:css'"
   },
   "devDependencies": {
