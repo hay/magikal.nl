@@ -5,8 +5,15 @@
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     }
 
+    function track(cat, action) {
+        if ('_paq' in window) {
+            window._paq.push(['trackEvent', cat, action]);
+        }
+    }
+
     function about() {
         $("#show-about").addEventListener('click', () => {
+            track('about-info', 'show');
             $("#about").classList.remove('hidden');
             $("#footer").classList.add('hidden');
         });
