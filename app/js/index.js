@@ -20,9 +20,9 @@
     }
 
     function counter() {
-        const START_DATE = dayjs('2021-04-19');
-        const START_COUNT = 4688307;
-        const PER_DAY = 112549;
+        const START_DATE = dayjs('2021-04-20');
+        const START_COUNT = 4787163;
+        const PER_DAY = 109475;
         const SEC_PER_DAY = 24 * 60 * 60 * 2; // Only shots between 8am - 8pm, so double the amount
         const PER_SECOND = (PER_DAY / SEC_PER_DAY);
 
@@ -45,7 +45,7 @@
             // Vacinations only happen between 8am - 8pm...i think
             const hour = dayjs().hour();
 
-            if (hour >= 8 && hour <= 22) {
+            if (hour >= 8 && hour < 20) {
                 (function anim() {
                     count += 1;
                     setCounter(count);
