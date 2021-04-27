@@ -32,10 +32,16 @@
         text-decoration: underline;
     }
 
-    &__note {
+    &__note,
+    &__remark {
         margin-top: 1rem;
         font-size: 2rem;
         font-weight: normal;
         color: var(--c-4);
+    }
+
+    &__remark {
+        font-size: 1.6rem;
+        text-align: center;
     }
 }
