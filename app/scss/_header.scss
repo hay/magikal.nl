@@ -5,14 +5,14 @@
     background: white;
     width: 100%;
     max-width: var(--max-width);
-    @include child-margins(2rem);
+    @include child-margins(3rem);
 
     h1, h2, h3 {
         text-align: center;
     }
 
     h1 {
-        font-size: 2.4rem;
+        font-size: 2.2rem;
         color: var(--c-5);
     }
 
@@ -34,7 +34,7 @@
 
     &__note,
     &__remark {
-        margin-top: 1rem;
+        margin-top: 2rem;
         font-size: 2rem;
         font-weight: normal;
         color: var(--c-4);
@@ -43,5 +43,19 @@
     &__remark {
         font-size: 1.6rem;
         text-align: center;
+    }
+
+    &__emoji {
+        @include wh(2.4rem);
+    }
+
+    @include respond-until($screen-xs) {
+        h1 {
+            font-size: 2rem;
+        }
+
+        h2 {
+            font-size: 3.4rem;
+        }
     }
 }

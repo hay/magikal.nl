@@ -1,3 +1,5 @@
+$screen-xs: 375px;
+
 :root {
     --font-monospace: 'Menlo', 'Courier New', Courier, monospace;
     --font-text: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -11,4 +13,10 @@
     --c-6: #eee;
 
     --max-width: 70rem;
+}
+
+@include respond-from($screen-md) {
+    :root {
+        --max-width: 80rem;
+    }
 }
