@@ -20,9 +20,9 @@
     }
 
     function counter() {
-        const START_DATE = dayjs('2021-04-27');
-        const START_COUNT = 5176010;
-        const PER_DAY = 86870;
+        const START_DATE = dayjs('2021-05-02');
+        const START_COUNT = 5651041;
+        const PER_DAY = 94095;
         const SEC_PER_DAY = 24 * 60 * 60 * 2; // Only shots between 8am - 8pm, so double the amount
         const PER_SECOND = (PER_DAY / SEC_PER_DAY);
 

@@ -33,16 +33,26 @@
     }
 
     &__note,
-    &__remark {
+    &__remark,
+    &__survey {
         margin-top: 2rem;
         font-size: 2rem;
         font-weight: normal;
         color: var(--c-4);
     }
 
-    &__remark {
+    &__remark,
+    &__survey {
         font-size: 1.6rem;
         text-align: center;
+    }
+
+    &__survey {
+        color: var(--c-5);
+    }
+
+    &__survey a {
+        text-decoration: underline;
     }
 
     &__emoji {
