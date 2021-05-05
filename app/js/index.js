@@ -50,12 +50,46 @@
         data() {
             return {
                 aboutVisible : false,
+                birthyearValue : null,
+                birthyear : null,
                 counter : null,
                 shotCount : null
             };
         },
 
         methods : {
+            between(val, min, max) {
+                return val >= min && val <= max;
+            },
+
+            estimate() {
+                const year = Number(this.birthyearValue.trim());
+
+                if (isNaN(year)) {
+                    alert("Dat is geen geldig geboortejaar");
+                    return;
+                }
+
+                if (year < 1900) {
+                    alert("Zo oud bent u echt niet!");
+                    return;
+                }
+
+                if (year > 2021) {
+                    alert("U bent nog niet geboren, dat lijkt me sterk.");
+                    return;
+                }
+
+                track('estimate-year', year);
+
+                this.birthyear = year;
+            },
+
+            resetBirthyear() {
+                this.birthyearValue = null;
+                this.birthyear = null;
+            },
+
             setShotCount() {
                 this.shotCount += 1;
                 this.counter.nextShot(() => this.setShotCount());

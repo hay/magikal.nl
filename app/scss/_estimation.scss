@@ -1,0 +1,57 @@
+.estimation {
+    @include child-margins(2rem);
+
+    &__form {
+        display: flex;
+        justify-content: center;
+        font-family: 'Menlo', 'Courier New', monospace;
+    }
+
+    &__input,
+    &__button {
+        border: 2px solid var(--c-1);
+        border-radius: 1rem;
+        padding: 1rem;
+    }
+
+    &__input {
+        border-right: none;
+        font-size: 2rem;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        padding-right: .5rem;
+    }
+
+    &__button {
+        font-size: 2rem;
+        border-left: none;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        padding-left: .5rem;
+    }
+
+    &__output {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include child-margins(2rem);
+    }
+
+    &__output > p {
+        font-size: 2rem;
+    }
+
+    &__output > p > strong {
+        color: var(--c-2);
+    }
+
+    &__output > small {
+        display: block;
+        text-align: center;
+    }
+
+    &__reset {
+        text-decoration: underline;
+        font-size: 1.6rem;
+    }
+}

@@ -1,9 +1,13 @@
 .about {
-    @include content-block;
+    @include child-margins(2rem);
     margin-bottom: 2rem;
 
+    h2, p {
+        text-align: left;
+    }
+
     h2 {
-        font-size: 2.2rem;
+        font-size: 2rem;
         line-height: 1.25;
     }
 

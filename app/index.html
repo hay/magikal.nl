@@ -57,19 +57,54 @@
         </section>
 
         <section class="box estimation">
-            <p>Vul uw geboortejaar in voor een schatting wanneer u aan de beurt bent:</p>
+            <p v-if="!birthyear">
+                Vul uw geboortejaar in voor een schatting wanneer u aan de beurt bent:
+            </p>
 
-            <form class="estimation__form">
-                <input id="birthyear"
+            <div
+                v-if="!birthyear"
+                class="estimation__form">
+                <input v-model="birthyearValue"
+                       type="number"
+                       min="1900"
+                       maxlength="4"
+                       max="2021"
+                       v-on:keyup.enter="estimate"
+                       placeholder="____"
                        class="estimation__input" />
 
                 <button
-                    id="birthyear-btn"
+                    v-on:click="estimate"
                     class="estimation__button">Bereken</button>
-            </form>
+            </div>
 
-            <div class="estimation__output">
-                Voor <strong></strong>
+            <div class="estimation__output"
+                 v-if="birthyear">
+                <p v-if="birthyear <= 1955 || between(birthyear, 1961, 1962)">
+                    <strong>Gefeliciteerd!</strong><br /><a href="https://coronatest.nl/ik-wil-me-laten-vaccineren/een-online-afspraak-maken">U kunt nú een afspraak maken</a>.
+                </p>
+
+                <p v-if="between(birthyear, 1956, 1960)">
+                    U wordt gevaccineerd bij de huisarts. U kunt helaas geen online afspraak maken.
+                </p>
+
+                <p v-if="between(birthyear, 1961, 1971)">
+                    De verwachting is dat u <strong>de komende weken</strong> gevaccineerd kunt worden.
+                </p>
+
+                <p v-if="between(birthyear, 1972, 1981)">
+                    De verwachting is dat u <strong>vanaf half juni</strong> gevaccineerd kunt worden.
+                </p>
+
+                <p v-if="birthyear >= 1982">
+                    De verwachting is dat u <strong>vanaf eind juni</strong> gevaccineerd kunt worden.
+                </p>
+
+                <small>Nota bene: er zijn allemaal uitzonderingen. U kunt bijvoorbeeld eerder worden geprikt als u in de zorg werkt, een medische aandoening heeft of in het waterpolo-team zit voor de Olympische Spelen in Tokyo. Die uitzonderingen zitten niet in deze check. <a href="https://www.rijksoverheid.nl/onderwerpen/coronavirus-vaccinatie/vraag-en-antwoord/wanneer-krijg-ik-een-vaccinatie-tegen-het-coronavirus">Op Rijksoverheid.nl</a> kunt een vragenlijst invullen om te zien of u tot de uitzonderingen behoort.</small>
+
+                <button
+                    v-on:click="resetBirthyear"
+                    class="estimation__reset">Vul een ander jaartal in</button>
             </div>
         </section>
 
@@ -81,7 +116,7 @@
 
         <article
             v-show="aboutVisible"
-            class="about">
+            class="box about">
             <h2>Waarom deze site?</h2>
 
             <p>
@@ -127,6 +162,10 @@
 
         <footer class="footer footer--pre">
             Maak deze site beter, <a href="https://forms.gle/EYXHkouXXoTRWgNy6">vul de (korte) enquête in</a>.
+        </footer>
+
+        <footer class="footer">
+            <em>Laatste update: 6 mei 2021</em>
         </footer>
     </div>
 
