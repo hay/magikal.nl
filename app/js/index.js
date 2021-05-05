@@ -1,6 +1,4 @@
 (function() {
-    const $ = document.querySelector.bind(document);
-
     function numberWithCommas(x) {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     }
@@ -11,53 +9,76 @@
         }
     }
 
-    function about() {
-        $("#show-about").addEventListener('click', () => {
-            track('about-info', 'show');
-            $("#about").classList.remove('hidden');
-            $("#footer").classList.add('hidden');
-        });
-    }
+    class Counter {
+        constructor(opts) {
+            this.startDate = dayjs(opts.startDate);
+            this.startCount = opts.startCount;
+            this.perDay = opts.perDay;
+            this.secPerDay = 24 * 60 * 60 * 2; // Only shots between 8am - 8pm, so double the amount
+            this.perSecond = this.perDay / this.secPerDay;
 
-    function counter() {
-        const START_DATE = dayjs('2021-05-04');
-        const START_COUNT = 5860446;
-        const PER_DAY = 97776;
-        const SEC_PER_DAY = 24 * 60 * 60 * 2; // Only shots between 8am - 8pm, so double the amount
-        const PER_SECOND = (PER_DAY / SEC_PER_DAY);
+        }
 
-        function getCount() {
+        getCount() {
             // Get difference in seconds, multiply by shots per second
             // and add to total
             const now = dayjs();
-            const diff = now.diff(START_DATE, 'seconds');
-            return Math.round(START_COUNT + (diff * PER_SECOND));
+            const diff = now.diff(this.startDate, 'seconds');
+            return Math.round(this.startCount + (diff * this.perSecond));
         }
 
-        function show() {
-            function setCounter(val) {
-                $("#counter-value").innerHTML = numberWithCommas(val);
-            }
-
-            let count = getCount();
-            setCounter(count);
-
+        isCounting() {
             // Vacinations only happen between 8am - 8pm...i think
             const hour = dayjs().hour();
-
-            if (hour >= 8 && hour < 20) {
-                (function anim() {
-                    count += 1;
-                    setCounter(count);
-                    setTimeout(anim, PER_SECOND * 1000);
-                })();
-            }
+            return hour >= 8 && hour < 20;
         }
 
-        $("#counter").classList.remove('hidden');
-        show();
+        nextShot(cb) {
+            setTimeout(cb, this.perSecond * 1000);
+        }
     }
 
-    about();
-    counter();
+    new Vue({
+        el : "#main",
+
+        computed : {
+            shotCountFormatted() {
+                return numberWithCommas(this.shotCount);
+            }
+        },
+
+        data() {
+            return {
+                aboutVisible : false,
+                counter : null,
+                shotCount : null
+            };
+        },
+
+        methods : {
+            setShotCount() {
+                this.shotCount += 1;
+                this.counter.nextShot(() => this.setShotCount());
+            },
+
+            showAbout() {
+                track('about-info', 'show');
+                this.aboutVisible = true;
+            }
+        },
+
+        mounted() {
+            this.counter = new Counter({
+                startCount : 5860446,
+                startDate : '2021-05-04',
+                perDay : 97776
+            });
+
+            this.shotCount = this.counter.getCount();
+
+            if (this.counter.isCounting()) {
+                this.setShotCount();
+            }
+        }
+    });
 })();

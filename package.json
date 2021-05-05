@@ -2,7 +2,8 @@
   "private": true,
   "dependencies": {
     "dayjs": "^1.10.4",
-    "valenski": "^1.4.0"
+    "valenski": "^1.4.0",
+    "vue": "^2.6.12"
   },
   "scripts": {
     "build": "npm run build:css",

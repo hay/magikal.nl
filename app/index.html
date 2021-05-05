@@ -16,7 +16,9 @@
     <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-    <div class="main">
+    <div
+        id="main"
+        class="main">
         <header class="header box box--margins">
             <h1>
                 <img src="img/wand.jpg"
@@ -46,17 +48,40 @@
             </p>
         </header>
 
-        <section id="counter" class="counter box hidden">
-            <p>Er zijn nu <strong id="counter-value"></strong> prikken gezet.</p>
+        <section
+            v-if="shotCount"
+            class="counter box">
+            <p>Er zijn nu <strong>{{shotCountFormatted}}</strong> prikken gezet.</p>
 
             <p><small>(schatting, op basis van data <a href="https://coronadashboard.rijksoverheid.nl/landelijk/vaccinaties">Rijksoverheid.nl</a>)</small></p>
         </section>
 
-        <footer id="footer" class="footer">
-            Dit is géén site van de Rijksoverheid. <button id="show-about" class="text-link">Lees hier meer over deze site</button>.
+        <section class="box estimation">
+            <p>Vul uw geboortejaar in voor een schatting wanneer u aan de beurt bent:</p>
+
+            <form class="estimation__form">
+                <input id="birthyear"
+                       class="estimation__input" />
+
+                <button
+                    id="birthyear-btn"
+                    class="estimation__button">Bereken</button>
+            </form>
+
+            <div class="estimation__output">
+                Voor <strong></strong>
+            </div>
+        </section>
+
+        <footer
+            v-show="!aboutVisible"
+            class="footer">
+            Dit is géén site van de Rijksoverheid. <button v-on:click="showAbout" class="text-link">Lees hier meer over deze site</button>.
         </footer>
 
-        <article id="about" class="about hidden">
+        <article
+            v-show="aboutVisible"
+            class="about">
             <h2>Waarom deze site?</h2>
 
             <p>
@@ -106,6 +131,7 @@
     </div>
 
     <script src="js/dayjs.min.js"></script>
+    <script src="js/vue.min.js"></script>
     <script src="js/index.js"></script>
 
     <!-- Matomo -->
