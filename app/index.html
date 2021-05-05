@@ -17,7 +17,7 @@
 </head>
 <body>
     <div class="main">
-        <header class="header">
+        <header class="header box box--margins">
             <h1>
                 <img src="img/wand.jpg"
                      alt="Een emoji van een toverstaf"
@@ -42,19 +42,15 @@
             </a>
 
             <p class="header__remark">
-                <sup>*</sup> Mensen geboren tussen 1956 en 1960 worden gevaccineerd bij de huisarts en kunnen geen afspraak online maken.
+                <sup>*</sup>Mensen geboren tussen 1956 en 1960 worden gevaccineerd bij de huisarts en kunnen geen afspraak online maken. Ja joh, ik snap het ook niet.
             </p>
-
-            <p class="header__survey">
-                Maak deze site nog beter <a href="https://forms.gle/EYXHkouXXoTRWgNy6">en vul de (hele korte) enquête in</a>.
-            </p>
-
-            <section id="counter" class="counter hidden">
-                <p>Er zijn nu <strong id="counter-value"></strong> prikken gezet.</p>
-
-                <p><small>(schatting, op basis van data <a href="https://coronadashboard.rijksoverheid.nl/landelijk/vaccinaties">Rijksoverheid.nl</a>)</small></p>
-            </section>
         </header>
+
+        <section id="counter" class="counter box hidden">
+            <p>Er zijn nu <strong id="counter-value"></strong> prikken gezet.</p>
+
+            <p><small>(schatting, op basis van data <a href="https://coronadashboard.rijksoverheid.nl/landelijk/vaccinaties">Rijksoverheid.nl</a>)</small></p>
+        </section>
 
         <footer id="footer" class="footer">
             Dit is géén site van de Rijksoverheid. <button id="show-about" class="text-link">Lees hier meer over deze site</button>.
@@ -103,6 +99,10 @@
                 Ik hou statistieken bij van bezoek aan deze website. Die statistieken zijn anoniem: ik registreer alleen de eerste twee delen van uw IP-adres. Vandaar dat deze site <a href="https://www.rijksoverheid.nl/onderwerpen/telecommunicatie/vraag-en-antwoord/mag-een-website-ongevraagd-cookies-plaatsen">geen lelijke cookiemuur nodig heeft</a>.
             </p>
         </article>
+
+        <footer class="footer footer--pre">
+            Maak deze site beter, <a href="https://forms.gle/EYXHkouXXoTRWgNy6">vul de (korte) enquête in</a>.
+        </footer>
     </div>
 
     <script src="js/dayjs.min.js"></script>

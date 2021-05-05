@@ -1,18 +1,10 @@
 .header {
-    border: 1rem solid var(--c-1);
-    border-radius: 2rem;
-    padding: 2rem 1rem;
-    background: white;
-    width: 100%;
-    max-width: var(--max-width);
-    @include child-margins(3rem);
-
     h1, h2, h3 {
         text-align: center;
     }
 
     h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
         color: var(--c-5);
     }
 
@@ -32,27 +24,9 @@
         text-decoration: underline;
     }
 
-    &__note,
-    &__remark,
-    &__survey {
+    &__note {
         margin-top: 2rem;
         font-size: 2rem;
-        font-weight: normal;
-        color: var(--c-4);
-    }
-
-    &__remark,
-    &__survey {
-        font-size: 1.6rem;
-        text-align: center;
-    }
-
-    &__survey {
-        color: var(--c-5);
-    }
-
-    &__survey a {
-        text-decoration: underline;
     }
 
     &__emoji {

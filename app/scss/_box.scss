@@ -1,0 +1,23 @@
+.box {
+    border-radius: 1rem;
+    padding: 2rem 1.5rem;
+    background: white;
+    width: calc(100% - 3rem);
+    max-width: var(--max-width);
+    margin-top: 2rem;
+
+    p {
+        font-size: 2rem;
+        font-size: 1.6rem;
+        font-weight: normal;
+        text-align: center;
+    }
+
+    p a {
+        text-decoration: underline;
+    }
+
+    &--margins {
+        @include child-margins(3rem);
+    }
+}

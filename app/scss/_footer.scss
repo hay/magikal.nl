@@ -8,7 +8,12 @@
         color: white;
     }
 
-    button {
+    button, a {
         text-decoration: underline;
+    }
+
+    &--pre {
+        padding-top: 0;
+        margin-bottom: 2rem;
     }
 }
