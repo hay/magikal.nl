@@ -12,7 +12,7 @@
     "build:css": "npm run build:sass && npm run build:autoprefixer",
     "build:sass": "node-sass app/scss/style.scss app/css/style.css",
     "clean" : "rm -rf dist && mkdir dist",
-    "dist": "npm run add-data && npm run clean && npm run build && cp -rv app/* dist/ && rm -rf dist/scss",
+    "dist": "npm run add-date && npm run clean && npm run build && cp -rv app/* dist/ && rm -rf dist/scss",
     "postinstall": "npm run build",
     "serve": "npm run watch:css & npx http-server -o ./app",
     "watch:css": "chokidar 'app/scss/*.scss' -c 'npm run build:css'"
