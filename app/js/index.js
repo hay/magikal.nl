@@ -53,6 +53,7 @@
                 birthyearValue : null,
                 birthyear : null,
                 counter : null,
+                lastModified : null,
                 shotCount : null
             };
         },
@@ -85,6 +86,12 @@
                 this.birthyear = year;
             },
 
+            async getLastModified() {
+                const req = await window.fetch('last-modified.txt');
+                const data = await req.text();
+                this.lastModified = data;
+            },
+
             resetBirthyear() {
                 this.birthyearValue = null;
                 this.birthyear = null;
@@ -103,9 +110,9 @@
 
         mounted() {
             this.counter = new Counter({
-                startCount : 5860446,
-                startDate : '2021-05-04',
-                perDay : 97776
+                startCount : 6588757,
+                startDate : '2021-05-10',
+                perDay : 118718
             });
 
             this.shotCount = this.counter.getCount();
@@ -113,6 +120,8 @@
             if (this.counter.isCounting()) {
                 this.setShotCount();
             }
+
+            this.getLastModified();
         }
     });
 })();

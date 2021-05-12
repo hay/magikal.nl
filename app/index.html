@@ -100,7 +100,7 @@
                     De verwachting is dat u <strong>vanaf eind juni</strong> gevaccineerd kunt worden.
                 </p>
 
-                <small>Nota bene: er zijn allemaal uitzonderingen. U kunt bijvoorbeeld eerder worden geprikt als u in de zorg werkt, een medische aandoening heeft of in het waterpolo-team zit voor de Olympische Spelen in Tokyo. Die uitzonderingen zitten niet in deze check. <a href="https://www.rijksoverheid.nl/onderwerpen/coronavirus-vaccinatie/vraag-en-antwoord/wanneer-krijg-ik-een-vaccinatie-tegen-het-coronavirus">Op Rijksoverheid.nl</a> kunt een vragenlijst invullen om te zien of u tot de uitzonderingen behoort.</small>
+                <small>Nota bene: er zijn allemaal uitzonderingen. U kunt bijvoorbeeld eerder worden geprikt als u in de zorg werkt, een medische aandoening heeft of in het waterpolo-team zit voor de Olympische Spelen in Tokyo. Die uitzonderingen zitten niet in deze check. <a href="https://www.rijksoverheid.nl/onderwerpen/coronavirus-vaccinatie/vraag-en-antwoord/wanneer-krijg-ik-een-vaccinatie-tegen-het-coronavirus">Op Rijksoverheid.nl</a> kunt een vragenlijst invullen om te zien of u tot de uitzonderingen behoort. De data zijn afkomstig <a href="https://www.rijksoverheid.nl/onderwerpen/coronavirus-vaccinatie/volgorde-van-vaccinatie-tegen-het-coronavirus/volgorde-vaccinatie-voor-mensen-die-niet-in-de-zorg-werken">van deze pagina</a>.</small>
 
                 <button
                     v-on:click="resetBirthyear"
@@ -164,8 +164,10 @@
             Maak deze site beter, <a href="https://forms.gle/EYXHkouXXoTRWgNy6">vul de (korte) enquête in</a>.
         </footer>
 
-        <footer class="footer">
-            <em>Laatste update: 6 mei 2021</em>
+        <footer
+            v-if="lastModified"
+            class="footer">
+            <em>Laatste update: {{lastModified}}</em>
         </footer>
     </div>
 
