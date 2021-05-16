@@ -29,7 +29,7 @@
 
             <h2>
                 <span>
-                    Bent u geboren <strong>in of vóór 1955</strong> of <strong>in 1961 of 1962?</strong><sup>*</sup> <br />
+                    Bent u geboren <strong>in of vóór 1964?<sup>*</sup><br />
                     <a href="https://coronatest.nl/ik-wil-me-laten-vaccineren/een-online-afspraak-maken">Dan kunt u nú een afspraak maken 🥳.</a></strong>
                 </span>
 
@@ -80,7 +80,7 @@
 
             <div class="estimation__output"
                  v-if="birthyear">
-                <p v-if="birthyear <= 1955 || between(birthyear, 1961, 1962)">
+                <p v-if="birthyear <= 1955 || between(birthyear, 1961, 1964)">
                     <strong>Gefeliciteerd!</strong><br /><a href="https://coronatest.nl/ik-wil-me-laten-vaccineren/een-online-afspraak-maken">U kunt nú een afspraak maken</a>.
                 </p>
 
@@ -88,7 +88,7 @@
                     U wordt gevaccineerd bij de huisarts. U kunt helaas geen online afspraak maken.
                 </p>
 
-                <p v-if="between(birthyear, 1961, 1971)">
+                <p v-if="between(birthyear, 1965, 1971)">
                     De verwachting is dat u <strong>de komende weken</strong> gevaccineerd kunt worden.
                 </p>
 

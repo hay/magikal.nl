@@ -110,9 +110,9 @@
 
         mounted() {
             this.counter = new Counter({
-                startCount : 6588757,
-                startDate : '2021-05-10',
-                perDay : 118718
+                startCount : 7309350,
+                startDate : '2021-05-15',
+                perDay : 137521
             });
 
             this.shotCount = this.counter.getCount();
