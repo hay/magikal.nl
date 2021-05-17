@@ -53,6 +53,7 @@
                 birthyearValue : null,
                 birthyear : null,
                 counter : null,
+                currentMaxYear : 1965,
                 lastModified : null,
                 shotCount : null
             };
@@ -67,12 +68,12 @@
                 const year = Number(this.birthyearValue.trim());
 
                 if (isNaN(year)) {
-                    alert("Dat is geen geldig geboortejaar");
+                    alert("Dat is geen geldig geboortejaar.");
                     return;
                 }
 
                 if (year < 1900) {
-                    alert("Zo oud bent u echt niet!");
+                    alert("Zo oud bent u echt niet.");
                     return;
                 }
 
@@ -110,9 +111,9 @@
 
         mounted() {
             this.counter = new Counter({
-                startCount : 7309350,
-                startDate : '2021-05-15',
-                perDay : 137521
+                startCount : 7448904,
+                startDate : '2021-05-16',
+                perDay : 140915
             });
 
             this.shotCount = this.counter.getCount();

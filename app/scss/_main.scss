@@ -6,3 +6,15 @@
     align-items: center;
     min-height: 100vh;
 }
+
+[v-cloak] > * {
+    display: none !important;
+}
+
+[v-cloak]:before {
+    content: '🥳 Een momentje aub...';
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    font-size: 3rem;
+}
