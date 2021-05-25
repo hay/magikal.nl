@@ -88,7 +88,8 @@
             },
 
             async getLastModified() {
-                const req = await window.fetch('last-modified.txt');
+                const bust = String(Math.random()).slice(2);
+                const req = await window.fetch(`last-modified.txt?v=${bust}`);
                 const data = await req.text();
                 this.lastModified = data;
             },
