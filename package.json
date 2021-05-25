@@ -7,15 +7,18 @@
   },
   "scripts": {
     "add-date" : "date '+%d-%m-%Y' > app/last-modified.txt",
-    "build": "npm run build:css",
+    "build": "npm run build:html && npm run build:css",
     "build:autoprefixer": "postcss app/css/*.css --use autoprefixer --no-map -r",
     "build:css": "npm run build:sass && npm run build:autoprefixer",
+    "build:html" : "node etc/build.js",
     "build:sass": "node-sass app/scss/style.scss app/css/style.css",
     "clean" : "rm -rf dist && mkdir dist",
     "dist": "npm run add-date && npm run clean && npm run build && cp -rv app/* dist/ && rm -rf dist/scss",
     "postinstall": "npm run build",
-    "serve": "npm run watch:css & npx http-server -o ./app",
-    "watch:css": "chokidar 'app/scss/*.scss' -c 'npm run build:css'"
+    "serve": "npm run watch & npx http-server -o ./app",
+    "watch" : "npm run watch:css & npm run watch:html",
+    "watch:css": "chokidar 'app/scss/*.scss' -c 'npm run build:css'",
+    "watch:html" : "chokidar 'app/html/index.html' -c 'npm run build:html'"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.4",

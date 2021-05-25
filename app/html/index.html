@@ -13,7 +13,7 @@
 
     <title>Mag ik al gevaccineerd worden?</title>
 
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css?v=__VERSION__" />
 </head>
 <body>
     <div
@@ -94,14 +94,26 @@
                 </p>
 
                 <p v-if="between(birthyear, currentMaxYear + 1, 1971)">
+                    <img src="img/waiting.gif"
+                         alt="Een wachtende kat"
+                         class="estimation__gif" />
+
                     De verwachting is dat u <strong>de komende weken</strong> gevaccineerd kunt worden.
                 </p>
 
                 <p v-if="between(birthyear, 1972, 1981)">
+                    <img src="img/waiting.gif"
+                         alt="Een wachtende kat"
+                         class="estimation__gif" />
+
                     De verwachting is dat u <strong>vanaf begin juni</strong> gevaccineerd kunt worden.
                 </p>
 
                 <p v-if="birthyear >= 1982">
+                    <img src="img/waiting.gif"
+                         alt="Een wachtende kat"
+                         class="estimation__gif" />
+
                     De verwachting is dat u <strong>vanaf half juni</strong> gevaccineerd kunt worden.
                 </p>
 
@@ -176,9 +188,9 @@
         </footer>
     </div>
 
-    <script src="js/dayjs.min.js"></script>
-    <script src="js/vue.min.js"></script>
-    <script src="js/index.js"></script>
+    <script src="js/dayjs.min.js?v=__VERSION__"></script>
+    <script src="js/vue.min.js?v=__VERSION__"></script>
+    <script src="js/index.js?v=__VERSION__"></script>
 
     <!-- Matomo -->
     <script type="text/javascript">
