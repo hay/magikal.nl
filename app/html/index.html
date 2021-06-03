@@ -93,20 +93,20 @@
                     U wordt gevaccineerd bij de huisarts. U kunt helaas geen online afspraak maken.
                 </p>
 
-                <p v-else-if="between(birthyear, currentMaxYear, 1981)">
+                <p v-else-if="between(birthyear, 1982, 1991)">
                     <img src="img/waiting.gif"
                          alt="Een wachtende kat"
                          class="estimation__gif" />
 
-                    De verwachting is dat u <strong>de komende dagen</strong> een afspraak kunt gaan maken.
+                    De verwachting is dat u <strong>de komende dagen</strong> een afspraak kunt maken.
                 </p>
 
-                <p v-else-if="between(birthyear, 1982, 2003)">
+                <p v-else-if="between(birthyear, 1992, 2003)">
                     <img src="img/waiting.gif"
                          alt="Een wachtende kat"
                          class="estimation__gif" />
 
-                    De verwachting is dat u <strong>vanaf half juni</strong> gevaccineerd kunt worden.
+                    De verwachting is dat u <strong>vanaf half juni</strong> een afspraak kunt maken.
                 </p>
 
                 <p v-else-if="birthyear >= 2003">
