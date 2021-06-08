@@ -83,6 +83,7 @@
                  v-if="birthyear">
                 <p v-if="birthyear <= 1955 || between(birthyear, 1961, currentMaxYear)">
                     <img src="img/cat.gif"
+                         loading="lazy"
                          alt="Een kat met een feestmuts"
                          class="estimation__gif" />
 
@@ -95,6 +96,7 @@
 
                 <p v-else-if="between(birthyear, 1982, 1991)">
                     <img src="img/waiting.gif"
+                         loading="lazy"
                          alt="Een wachtende kat"
                          class="estimation__gif" />
 
@@ -103,6 +105,7 @@
 
                 <p v-else-if="between(birthyear, 1992, 2003)">
                     <img src="img/waiting.gif"
+                         loading="lazy"
                          alt="Een wachtende kat"
                          class="estimation__gif" />
 
@@ -111,6 +114,7 @@
 
                 <p v-else-if="birthyear >= 2003">
                     <img src="img/waiting.gif"
+                         loading="lazy"
                          alt="Een wachtende kat"
                          class="estimation__gif" />
 
