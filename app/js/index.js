@@ -53,7 +53,7 @@
                 birthyearValue : null,
                 birthyear : null,
                 counter : null,
-                currentMaxYear : 1988,
+                currentMaxYear : 1990,
                 lastModified : null,
                 shotCount : null
             };
