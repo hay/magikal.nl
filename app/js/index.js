@@ -53,7 +53,7 @@
                 birthyearValue : null,
                 birthyear : null,
                 counter : null,
-                currentMaxYear : 1992,
+                currentMaxYear : 1993,
                 lastModified : null,
                 shotCount : null
             };
@@ -112,9 +112,9 @@
 
         mounted() {
             this.counter = new Counter({
-                startCount : 11640368,
-                startDate : '2021-06-10',
-                perDay : 195439
+                startCount : 11878295,
+                startDate : '2021-06-11',
+                perDay : 205668
             });
 
             this.shotCount = this.counter.getCount();
