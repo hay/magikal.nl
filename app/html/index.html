@@ -94,22 +94,13 @@
                     U wordt gevaccineerd bij de huisarts. U kunt helaas geen online afspraak maken.
                 </p>
 
-                <p v-else-if="between(birthyear, 1982, 1991)">
-                    <img src="img/waiting.gif"
-                         loading="lazy"
-                         alt="Een wachtende kat"
-                         class="estimation__gif" />
-
-                    De verwachting is dat u <strong>de komende dagen</strong> een afspraak kunt maken.
-                </p>
-
                 <p v-else-if="between(birthyear, 1992, 2003)">
                     <img src="img/waiting.gif"
                          loading="lazy"
                          alt="Een wachtende kat"
                          class="estimation__gif" />
 
-                    De verwachting is dat u <strong>vanaf half juni</strong> een afspraak kunt maken.
+                    De verwachting is dat u <strong>de komende dagen</strong> een afspraak kunt maken.
                 </p>
 
                 <p v-else-if="birthyear >= 2003">
@@ -120,8 +111,6 @@
 
                     Op dit moment worden mensen van 16 jaar en jonger nog niet gevaccineerd. 😭
                 </p>
-
-                <p>De vaccinaties gaan sneller dan de planning. U kunt eerder aan de beurt zijn. Hou deze site in de gaten.</p>
 
                 <small>Nota bene: er zijn allemaal uitzonderingen. U kunt bijvoorbeeld eerder worden geprikt als u in de zorg werkt, een medische aandoening heeft of in het waterpolo-team zit voor de Olympische Spelen in Tokyo. Die uitzonderingen zitten niet in deze check. <a href="https://www.rijksoverheid.nl/onderwerpen/coronavirus-vaccinatie/vraag-en-antwoord/wanneer-krijg-ik-een-vaccinatie-tegen-het-coronavirus">Op Rijksoverheid.nl</a> kunt een vragenlijst invullen om te zien of u tot de uitzonderingen behoort. De data zijn afkomstig <a href="https://www.rijksoverheid.nl/onderwerpen/coronavirus-vaccinatie/volgorde-van-vaccinatie-tegen-het-coronavirus/volgorde-vaccinatie-voor-mensen-die-niet-in-de-zorg-werken">van deze pagina</a>.</small>
 
