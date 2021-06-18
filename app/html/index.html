@@ -7,7 +7,7 @@
     <meta property="og:title" content="Mag ik al gevaccineerd worden?">
     <meta property="og:url" content="https://www.magikal.nl">
     <meta property="og:image" content="https://www.magikal.nl/img/social.jpg">
-    <meta property="og:description" content="Kijk op deze site om te zien of u al gevaccineerd mag worden.">
+    <meta property="og:description" content="Kijk op deze site om te zien of je al gevaccineerd mag worden.">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@hayify">
 
@@ -30,12 +30,12 @@
 
             <h2>
                 <span>
-                    Bent u geboren <strong>in of vóór {{currentMaxYear}}?<sup>*</sup><br />
-                    <a href="https://coronatest.nl/ik-wil-me-laten-vaccineren/een-online-afspraak-maken">Dan kunt u nú een afspraak maken 🥳.</a></strong>
+                    Ben je geboren <strong>in of vóór {{currentMaxYear}}?<sup>*</sup><br />
+                    <a href="https://coronatest.nl/ik-wil-me-laten-vaccineren/een-online-afspraak-maken">Dan kun je nú een afspraak maken 🥳.</a></strong>
                 </span>
 
                 <span class="header__note">
-                    (ook als u geen brief heeft gehad)
+                    (ook als je geen brief hebt gehad)
                 </span>
             </h2>
 
@@ -59,7 +59,7 @@
 
         <section class="box estimation">
             <p v-if="!birthyear">
-                Vul uw geboortejaar in voor een schatting wanneer u aan de beurt bent:
+                Vul je geboortejaar in voor een schatting wanneer je aan de beurt bent:
             </p>
 
             <div
@@ -87,7 +87,7 @@
                          alt="Een kat met een feestmuts"
                          class="estimation__gif" />
 
-                    <strong>Gefeliciteerd!</strong><br /><a href="https://coronatest.nl/ik-wil-me-laten-vaccineren/een-online-afspraak-maken">U kunt nú een afspraak maken</a>.
+                    <strong>Gefeliciteerd!</strong><br /><a href="https://coronatest.nl/ik-wil-me-laten-vaccineren/een-online-afspraak-maken">Je kunt nú een afspraak maken</a>.
                 </p>
 
                 <p v-else-if="between(birthyear, 1956, 1960)">
@@ -100,7 +100,7 @@
                          alt="Een wachtende kat"
                          class="estimation__gif" />
 
-                    De verwachting is dat u <strong>de komende dagen</strong> een afspraak kunt maken.
+                    De verwachting is dat je <strong>de komende dagen</strong> een afspraak kunt maken.
                 </p>
 
                 <p v-else-if="birthyear >= 2003">
@@ -112,7 +112,7 @@
                     Op dit moment worden mensen van 16 jaar en jonger nog niet gevaccineerd. 😭
                 </p>
 
-                <small>Nota bene: er zijn allemaal uitzonderingen. U kunt bijvoorbeeld eerder worden geprikt als u in de zorg werkt, een medische aandoening heeft of in het waterpolo-team zit voor de Olympische Spelen in Tokyo. Die uitzonderingen zitten niet in deze check. <a href="https://www.rijksoverheid.nl/onderwerpen/coronavirus-vaccinatie/vraag-en-antwoord/wanneer-krijg-ik-een-vaccinatie-tegen-het-coronavirus">Op Rijksoverheid.nl</a> kunt een vragenlijst invullen om te zien of u tot de uitzonderingen behoort. De data zijn afkomstig <a href="https://www.rijksoverheid.nl/onderwerpen/coronavirus-vaccinatie/volgorde-van-vaccinatie-tegen-het-coronavirus/volgorde-vaccinatie-voor-mensen-die-niet-in-de-zorg-werken">van deze pagina</a>.</small>
+                <small>Nota bene: er zijn allemaal uitzonderingen. Je kunt bijvoorbeeld eerder worden geprikt als je in de zorg werkt, een medische aandoening hebt of in het waterpolo-team zit voor de Olympische Spelen in Tokyo. Die uitzonderingen zitten niet in deze check. <a href="https://www.rijksoverheid.nl/onderwerpen/coronavirus-vaccinatie/vraag-en-antwoord/wanneer-krijg-ik-een-vaccinatie-tegen-het-coronavirus">Op Rijksoverheid.nl</a> kun je een vragenlijst invullen om te zien of je tot de uitzonderingen behoort. De data zijn afkomstig <a href="https://www.rijksoverheid.nl/onderwerpen/coronavirus-vaccinatie/volgorde-van-vaccinatie-tegen-het-coronavirus/volgorde-vaccinatie-voor-mensen-die-niet-in-de-zorg-werken">van deze pagina</a>.</small>
 
                 <button
                     v-on:click="resetBirthyear"
@@ -138,13 +138,13 @@
             <h2>Waar kan ik terecht met vragen over de vaccinatie of het coronavirus?</h2>
 
             <p>
-                U kunt terecht bij <a href="https://www.rijksoverheid.nl/corona">de site van de Rijksoverheid</a>. Ik ben niet betrokken bij het vaccinatieprogramma en kan daar ook geen vragen over beantwoorden.
+                Je kunt terecht bij <a href="https://www.rijksoverheid.nl/corona">de site van de Rijksoverheid</a>. Ik ben niet betrokken bij het vaccinatieprogramma en kan daar ook geen vragen over beantwoorden.
             </p>
 
             <h2>Hoe zit het met de uitzonderingen?</h2>
 
             <p>
-                Er zijn uitzonderingen, bijvoorbeeld voor mensen die werken in de zorg of tot een risicogroep behoren. Op <a href="https://magikalprikken.nl/">magikalprikken.nl</a> kunt u een vragenlijst invullen om te kijken of u tot één van die groepen behoort.
+                Er zijn uitzonderingen, bijvoorbeeld voor mensen die werken in de zorg of tot een risicogroep behoren. Op <a href="https://magikalprikken.nl/">magikalprikken.nl</a> kun je een vragenlijst invullen om te kijken of je tot één van die groepen behoort.
             </p>
 
             <h2>De Rijksoverheid biedt al veel informatie aan over vaccinaties aan, waarom dan toch deze site?</h2>
@@ -162,13 +162,13 @@
             <h2>Ik heb een fout gezien op deze site!</h2>
 
             <p>
-                U kunt me een <a href="mailto:hay@haykranen.nl">mailtje sturen</a>, <a href="https://twitter.com/hayify">een tweet sturen</a> of direct naar de code van deze site gaan <a href="https://github.com/hay/magikal.nl">op GitHub</a>.
+                Je kunt me een <a href="mailto:hay@haykranen.nl">mailtje sturen</a>, <a href="https://twitter.com/hayify">een tweet sturen</a> of direct naar de code van deze site gaan <a href="https://github.com/hay/magikal.nl">op GitHub</a>.
             </p>
 
             <h2>Wat gebeurt er met mijn bezoek aan deze site?</h2>
 
             <p>
-                Ik hou statistieken bij van bezoek en interactie aan deze website. Die statistieken zijn anoniem: ik registreer alleen de eerste twee delen van uw IP-adres. Vandaar dat deze site <a href="https://www.rijksoverheid.nl/onderwerpen/telecommunicatie/vraag-en-antwoord/mag-een-website-ongevraagd-cookies-plaatsen">geen lelijke cookiemuur nodig heeft</a>.
+                Ik hou statistieken bij van bezoek en interactie aan deze website. Die statistieken zijn anoniem: ik registreer alleen de eerste twee delen van je IP-adres. Vandaar dat deze site <a href="https://www.rijksoverheid.nl/onderwerpen/telecommunicatie/vraag-en-antwoord/mag-een-website-ongevraagd-cookies-plaatsen">geen lelijke cookiemuur nodig heeft</a>.
             </p>
         </article>
 
