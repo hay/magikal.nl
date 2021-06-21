@@ -30,8 +30,9 @@
 
             <h2>
                 <span>
-                    Ben je geboren <strong>in of vóór {{currentMaxYear}}?<sup>*</sup><br />
-                    <a href="https://coronatest.nl/ik-wil-me-laten-vaccineren/een-online-afspraak-maken">Dan kun je nú een afspraak maken 🥳.</a></strong>
+                    <strong>
+                        Ja, je mag!<sup>*</sup>
+                    </strong>
                 </span>
 
                 <span class="header__note">
@@ -45,80 +46,10 @@
             </a>
 
             <p class="header__remark">
-                <sup>*</sup>Mensen geboren tussen 1956 en 1960 worden gevaccineerd bij de huisarts en kunnen geen afspraak online maken. Ja joh, ik snap het ook niet.
+                <sup>*</sup>
+                Mits je bent geboren in 2003 of eerder. Mensen van 16 jaar en jonger worden (nog) niet gevaccineerd.
             </p>
         </header>
-
-        <section
-            v-if="shotCount"
-            class="counter box">
-            <p>Er zijn nu <strong>{{shotCountFormatted}}</strong> prikken gezet.</p>
-
-            <p><small>(schatting, op basis van data <a href="https://coronadashboard.rijksoverheid.nl/landelijk/vaccinaties">Rijksoverheid.nl</a>)</small></p>
-        </section>
-
-        <section class="box estimation">
-            <p v-if="!birthyear">
-                Vul je geboortejaar in voor een schatting wanneer je aan de beurt bent:
-            </p>
-
-            <div
-                v-if="!birthyear"
-                class="estimation__form">
-                <input v-model="birthyearValue"
-                       type="number"
-                       min="1900"
-                       maxlength="4"
-                       max="2021"
-                       v-on:keyup.enter="estimate"
-                       placeholder="____"
-                       class="estimation__input" />
-
-                <button
-                    v-on:click="estimate"
-                    class="estimation__button">Bereken</button>
-            </div>
-
-            <div class="estimation__output"
-                 v-if="birthyear">
-                <p v-if="birthyear <= 1955 || between(birthyear, 1961, currentMaxYear)">
-                    <img src="img/cat.gif"
-                         loading="lazy"
-                         alt="Een kat met een feestmuts"
-                         class="estimation__gif" />
-
-                    <strong>Gefeliciteerd!</strong><br /><a href="https://coronatest.nl/ik-wil-me-laten-vaccineren/een-online-afspraak-maken">Je kunt nú een afspraak maken</a>.
-                </p>
-
-                <p v-else-if="between(birthyear, 1956, 1960)">
-                    U wordt gevaccineerd bij de huisarts. U kunt helaas geen online afspraak maken.
-                </p>
-
-                <p v-else-if="between(birthyear, 1992, 2003)">
-                    <img src="img/waiting.gif"
-                         loading="lazy"
-                         alt="Een wachtende kat"
-                         class="estimation__gif" />
-
-                    De verwachting is dat je <strong>de komende dagen</strong> een afspraak kunt maken.
-                </p>
-
-                <p v-else-if="birthyear >= 2003">
-                    <img src="img/waiting.gif"
-                         loading="lazy"
-                         alt="Een wachtende kat"
-                         class="estimation__gif" />
-
-                    Op dit moment worden mensen van 16 jaar en jonger nog niet gevaccineerd. 😭
-                </p>
-
-                <small>Nota bene: er zijn allemaal uitzonderingen. Je kunt bijvoorbeeld eerder worden geprikt als je in de zorg werkt, een medische aandoening hebt of in het waterpolo-team zit voor de Olympische Spelen in Tokyo. Die uitzonderingen zitten niet in deze check. <a href="https://www.rijksoverheid.nl/onderwerpen/coronavirus-vaccinatie/vraag-en-antwoord/wanneer-krijg-ik-een-vaccinatie-tegen-het-coronavirus">Op Rijksoverheid.nl</a> kun je een vragenlijst invullen om te zien of je tot de uitzonderingen behoort. De data zijn afkomstig <a href="https://www.rijksoverheid.nl/onderwerpen/coronavirus-vaccinatie/volgorde-van-vaccinatie-tegen-het-coronavirus/volgorde-vaccinatie-voor-mensen-die-niet-in-de-zorg-werken">van deze pagina</a>.</small>
-
-                <button
-                    v-on:click="resetBirthyear"
-                    class="estimation__reset">Vul een ander jaartal in</button>
-            </div>
-        </section>
 
         <footer
             v-show="!aboutVisible"
@@ -139,24 +70,6 @@
 
             <p>
                 Je kunt terecht bij <a href="https://www.rijksoverheid.nl/corona">de site van de Rijksoverheid</a>. Ik ben niet betrokken bij het vaccinatieprogramma en kan daar ook geen vragen over beantwoorden.
-            </p>
-
-            <h2>Hoe zit het met de uitzonderingen?</h2>
-
-            <p>
-                Er zijn uitzonderingen, bijvoorbeeld voor mensen die werken in de zorg of tot een risicogroep behoren. Op <a href="https://magikalprikken.nl/">magikalprikken.nl</a> kun je een vragenlijst invullen om te kijken of je tot één van die groepen behoort.
-            </p>
-
-            <h2>De Rijksoverheid biedt al veel informatie aan over vaccinaties aan, waarom dan toch deze site?</h2>
-
-            <p>
-                In de communicatie vanuit de Rijksoverheid wordt geprobeerd om álles te vatten. Ik ben van mening dat je de communicatie ten eerste moet richten op de grootste groep: de mensen die op basis van leeftijd nú gevaccineerd mogen worden. Natuurlijk kun je in die communicatie ook de andere groepen aanspreken. Maar ik zou zeggen: focus je in de communicatie vooral op de grootste groep, zodat we zo snel mogelijk zo veel mogelijk mensen vaccineren.
-            </p>
-
-            <h2>Waar komen de gegevens vandaan voor het tellertje?</h2>
-
-            <p>
-                Die komen rechtstreeks van <a href="https://coronadashboard.rijksoverheid.nl/landelijk/vaccinaties">het coronadashboard van de Rijksoverheid</a>. Andere goede plekken om de cijfers in grafiekjes te zien zijn bij <a href="https://www.nrc.nl/nieuws/2021/01/24/zo-gaat-het-nu-met-het-vaccineren-a4028780">het NRC</a> en <a href="https://coronabeeld.nl/">coronabeeld.nl</a>.
             </p>
 
             <h2>Ik heb een fout gezien op deze site!</h2>
@@ -183,7 +96,6 @@
         </footer>
     </div>
 
-    <script src="js/dayjs.min.js?v=__VERSION__"></script>
     <script src="js/vue.min.js?v=__VERSION__"></script>
     <script src="js/index.js?v=__VERSION__"></script>
 
